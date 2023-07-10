@@ -25,7 +25,15 @@ const HomePage = () => {
 
   return (
     <main className="main">
-      <CalculateMax weight={weight} reps={reps} setWeight={setWeight} setReps={setReps} />
+      <div className="container">
+        <h1 className="title">Тренировка по жиму лежа</h1>
+      </div>
+      <CalculateMax
+        weight={weight}
+        reps={reps}
+        setWeight={setWeight}
+        setReps={setReps}
+      />
       <CalculateTraining max={max} setMax={setMax} />
     </main>
   );

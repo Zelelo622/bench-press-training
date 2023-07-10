@@ -27,6 +27,8 @@ const CalculateTraining = ({ max, setMax }) => {
               <input
                 className="calcTrain__input"
                 id="weight"
+                type="number"
+                min={0}
                 value={max}
                 onChange={(e) => {
                   setMax(e.target.value);
