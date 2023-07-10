@@ -38,6 +38,7 @@ const CalculateMax = ({ weight, reps, setWeight, setReps }) => {
                 onChange={(e) => {
                   setWeight(e.target.value);
                 }}
+                placeholder="кг"
               />
             </div>
             <div className="calcMax__form-wrap">
@@ -51,6 +52,7 @@ const CalculateMax = ({ weight, reps, setWeight, setReps }) => {
                 onChange={(e) => {
                   setReps(e.target.value);
                 }}
+                placeholder="кол-во"
               />
             </div>
             <button className="calcMax__btn" onClick={calculateMaxes}>

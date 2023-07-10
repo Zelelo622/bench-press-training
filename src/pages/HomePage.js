@@ -2,21 +2,22 @@ import React, { useEffect, useState } from "react";
 import CalculateMax from "../components/CalculateMax";
 
 const HomePage = () => {
-  const [weight, setWeight] = useState("");
-  const [reps, setReps] = useState("");
-  const [max, setMax] = useState("");
-  const [trainingWeights, setTrainingWeights] = useState([]);
-
-  useEffect(() => {
+  const [weight, setWeight] = useState(() => {
     const storedData = localStorage.getItem("trainingData");
+    return storedData ? JSON.parse(storedData).weight : "";
+  });
 
-    if (storedData) {
-      const { weight, reps, max } = JSON.parse(storedData);
-      setWeight(weight);
-      setReps(reps);
-      setMax(max);
-    }
-  }, []);
+  const [reps, setReps] = useState(() => {
+    const storedData = localStorage.getItem("trainingData");
+    return storedData ? JSON.parse(storedData).reps : "";
+  });
+
+  const [max, setMax] = useState(() => {
+    const storedData = localStorage.getItem("trainingData");
+    return storedData ? JSON.parse(storedData).max : "";
+  });
+
+  const [trainingWeights, setTrainingWeights] = useState([]);
 
   useEffect(() => {
     const data = { weight, reps, max };
