@@ -9,8 +9,9 @@
 .btn {
   border: none;
   outline: none;
-  padding: 0;
-  background-color: transparent;
+  padding: 4px 10px;
+  border-radius: 500px;
+  background-color: #81f14d;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -71,7 +72,7 @@
   border-radius: 4px;
   padding: 4px 16px 4px 10px;
   font-size: 18px;
-  width: 40px;
+  width: 55px;
 }
 
 .calcMax__btns {
@@ -79,33 +80,177 @@
 }
 
 .calcMax__btn {
-  border: none;
-  outline: none;
-  padding: 4px 10px;
-  border-radius: 500px;
-  background-color: #81f14d;
   font-size: 18px;
   font-weight: 500;
-  cursor: pointer;
+  overflow-x: auto; /* Добавляем горизонтальный скролл на маленьких экранах */
+  max-width: 100%;
 }
 
-.calcMax__table {
-  width: 100%;
+table {
+  border: 1px solid #ccc;
   border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.calcMax__table-header,
-.calcMax__table-cell {
-  border: 1px solid #000000;
-  padding: 8px;
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
 }
 
-.calcMax__table-header {
-  background-color: #f5f5f5;
-  font-weight: bold;
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.calcMax__table-cell {
+.calcTrain {
+  margin-bottom: 32px;
+}
+
+.calcTrain__inner {
+}
+
+.calcTrain__form {
+  display: inline-block;
+  padding: 14px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  margin-bottom: 32px;
+}
+
+.calcTrain__form-wrap {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.calcTrain__label {
   font-size: 18px;
   font-weight: 500;
+}
+
+.calcTrain__input {
+  margin-left: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 4px 16px 4px 10px;
+  font-size: 18px;
+  width: 55px;
+}
+
+.calcTrain__btn {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.calcTrain__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.calcTrain__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calcTrain__item {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+.calcTrain__item-text {
+  font-size: 18px;
+}
+
+.calcTrain__item-span {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .calcMax__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calcMax__title {
+    text-align: center;
+  }
+
+  table {
+    border: 0;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .calcMax__table-header-none {
+    display: none;
+  }
+
+  .calcTrain__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calcTrain__title {
+    text-align: center;
+  }
+
+  .calcTrain__list {
+    flex-direction: column;
+  }
 }

@@ -60,7 +60,7 @@ const CalculateMax = ({ weight, reps, setWeight, setReps }) => {
               />
             </div>
             <div className="calcMax__btns">
-              <button className="calcMax__btn" onClick={calculateMaxes}>
+              <button className="calcMax__btn btn" onClick={calculateMaxes}>
                 Рассчитать ПМ
               </button>
             </div>
@@ -69,18 +69,30 @@ const CalculateMax = ({ weight, reps, setWeight, setReps }) => {
           <table className="calcMax__table">
             <thead>
               <tr>
-                <th className="calcMax__table-header">&nbsp;</th>
-                <th className="calcMax__table-header">Бжицки</th>
-                <th className="calcMax__table-header">Эпли</th>
-                <th className="calcMax__table-header">Лэндера</th>
+                <th scope="col" className="calcMax__table-header calcMax__table-header-none">&nbsp;</th>
+                <th scope="col" className="calcMax__table-header">
+                  Бжицки
+                </th>
+                <th scope="col" className="calcMax__table-header">
+                  Эпли
+                </th>
+                <th scope="col" className="calcMax__table-header">
+                  Лэндера
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th className="calcMax__table-header">Т. Максимум</th>
-                <td className="calcMax__table-cell">{brzyckiMax}</td>
-                <td className="calcMax__table-cell">{epleyMax}</td>
-                <td className="calcMax__table-cell">{landerMax}</td>
+                <th className="calcMax__table-header calcMax__table-header-none">Т. Максимум</th>
+                <td data-label="Бжицки" className="calcMax__table-cell">
+                  {brzyckiMax}
+                </td>
+                <td data-label="Эпли" className="calcMax__table-cell">
+                  {epleyMax}
+                </td>
+                <td data-label="Лэндера" className="calcMax__table-cell">
+                  {landerMax}
+                </td>
               </tr>
             </tbody>
           </table>

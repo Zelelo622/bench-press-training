@@ -36,12 +36,12 @@ const CalculateTraining = ({ max, setMax }) => {
                 placeholder="кг"
               />
             </div>
-            <button className="calcTrain__btn" onClick={calculateTraining}>
+            <button className="calcTrain__btn btn" onClick={calculateTraining}>
               Показать план тренировки
             </button>
           </form>
 
-          <p>3 подхода / 2 раза в неделю</p>
+          <p className="calcTrain__title">3 подхода / 2 раза в неделю</p>
           {trainingWeights.length > 0 && (
             <div className="calcTrain__list">
               {trainingWeights.map((trainingWeights, index) => (
