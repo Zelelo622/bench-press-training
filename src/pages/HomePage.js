@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CalculateMax from "../components/CalculateMax";
+import CalculateTraining from "../components/CalculateTraining";
 
 const HomePage = () => {
   const [weight, setWeight] = useState(() => {
@@ -17,8 +18,6 @@ const HomePage = () => {
     return storedData ? JSON.parse(storedData).max : "";
   });
 
-  const [trainingWeights, setTrainingWeights] = useState([]);
-
   useEffect(() => {
     const data = { weight, reps, max };
     localStorage.setItem("trainingData", JSON.stringify(data));
@@ -27,6 +26,7 @@ const HomePage = () => {
   return (
     <main className="main">
       <CalculateMax weight={weight} reps={reps} setWeight={setWeight} setReps={setReps} />
+      <CalculateTraining max={max} setMax={setMax} />
     </main>
   );
 };

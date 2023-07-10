@@ -56,7 +56,7 @@ const CalculateMax = ({ weight, reps, setWeight, setReps }) => {
               />
             </div>
             <button className="calcMax__btn" onClick={calculateMaxes}>
-              Рассчитать ОМ
+              Рассчитать ПМ
             </button>
           </form>
 
